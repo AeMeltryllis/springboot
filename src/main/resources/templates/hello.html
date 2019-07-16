@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>hello</title>
+    <meta charset="UTF-8"></meta>
+
+
+    <link rel="stylesheet" type="text/css" media="all" href="../../webapp/static/css/style.css"  th:href="@{/static/css/style.css}"/>
+<script type="text/javascript" src="../../webapp/static/js/thymeleaf.js"  th:src="@{/static/js/thymeleaf.js}"></script>
+<script>testFunction();</script>
+</head>
+<body>
+<!--在idea检查下 ${name}会报错-->
+<div class="showing">
+<p th:text="${name}" >name</p>
+<p th:text="'Hello！ ' +${name}+'!'">hello world</p>
+<p th:text="|Hello ${name}|" >hello world</p>
+</div>
+</body>
+</html>
