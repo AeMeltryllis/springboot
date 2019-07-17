@@ -35,13 +35,14 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-
+<!--热部署依赖-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
 			<optional>true</optional>
 			<scope>true</scope><!-- 这个需要为 true 热部署才有效 -->
 		</dependency>
+
 			<!--这里开始添加jsp依赖-->
 
 		<!--这里不屏蔽junit会导致com.how2java.springboot.SpringbootApplicationTests出错-->
@@ -79,6 +80,7 @@
 	<build>
 		<plugins>
 			<plugin>
+				<!--热部署插件-->
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>

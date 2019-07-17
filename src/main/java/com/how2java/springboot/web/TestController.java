@@ -12,9 +12,11 @@ public class TestController {
     public String test(Model m){
         String htmlContent = "<p style='color:red'> 红色文字</p>";
         Product currentProduct =new Product(5,"产品名", 200);
+        boolean check =false;
 
         m.addAttribute("htmlContent", htmlContent);
         m.addAttribute("currentProduct", currentProduct);
+        m.addAttribute("check",check);
 
         return "test";
 

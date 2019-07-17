@@ -8,15 +8,14 @@
     <link rel="stylesheet" type="text/css" media="all" href="../../webapp/static/css/style.css" th:href="@{/static/css/style.css}"/>
     <script type="text/javascript" src="../../webapp/static/js/thymeleaf.js" th:src="@{/static/js/thymeleaf.js}"></script>
 
-    <style>
-        h2{
-            text-decoration: underline;
-            font-size:0.9em;
-            color:gray;
-        }
-    </style>
 </head>
 <body>
+<div class="showing">
+    <p th:unless="${check}" >unless 等同于上一句，所以如果testBoolean 是 true ，本句话就不会显示</p>
+    <p th:text="${check}?'当check为真的时候，显示本句话，这是用三相表达式做的':''" ></p>
+</div>
+
+
 <!--转义和非转义的html-->
 <!--如果传过来的是h5的，用转义(utext)会解析html标签的效果，反之-->
 <p th:text="${htmlContent}" ></p>
@@ -25,11 +24,12 @@
 <!--获取对象属性的两种方式，这里可以直接调用方法了-->
 <p th:text="${currentProduct.name}"  th:="" ></p>
 <p th:text="${currentProduct.getName()}" ></p>
-<div class="showing">
-    <h2>显示 转义和非转义的 html 文本</h2>
-    <p th:text="${htmlContent}" ></p>
-    <p th:utext="${htmlContent}" ></p>
-</div>
+
+<!--<div class="showing">-->
+    <!--<h2>显示 转义和非转义的 html 文本</h2>-->
+    <!--<p th:text="${htmlContent}" ></p>-->
+    <!--<p th:utext="${htmlContent}" ></p>-->
+<!--</div>-->
 
 <div class="showing">
     <h2>显示对象以及对象属性</h2>
@@ -48,6 +48,13 @@
     <h2>算数运算</h2>
     <p th:text="${currentProduct.price+999}" ></p>
     <p th:utext="${currentProduct.price+999}" ></p>
+</div>
+
+<div class="showing">
+    <!--还可以用 th:insert来插入（带标签效果）-->
+    <div th:replace="include::footer1" ></div>
+    <div th:replace="include::footer2(2016,2020)" ></div>
+
 </div>
 </body>
 </html>

@@ -11,3 +11,8 @@ div.showing{
 .odd{
     background-color: green;
 }
+h2{
+    text-decoration: underline;
+    font-size:0.9em;
+    color:gray;
+}
